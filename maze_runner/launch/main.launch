@@ -1,0 +1,5 @@
+<launch>
+    <node name="filter" pkg="maze_runner" type="filter.py" output="screen"/>
+    <node name="object_detector" pkg="maze_runner" type="object_detector.py" output="screen"/>
+
+</launch>
