@@ -63,18 +63,18 @@ cmd_vel_pub = rospy.Publisher('cmd_vel', Twist, queue_size=1)
 rate = rospy.Rate(10)
 
 while not rospy.is_shutdown():
-    global time_last_saw_wall
     vel = Twist()
+    time_now = time.time()
 
     if dist_ahead < dist_ahead_threshold:
-        time_last_saw_wall = time.time()
-        vel.angular.z = 0.5
+        time_last_saw_wall = time_now
+        vel.angular.z = 1.5
     else:
         vel.linear.x = 0.2
         if dist_diag > dist_diag_threshold:
-            vel.angular.z = -1.0 * min(1.0, 0.5*(dist_ahead - dist_ahead_threshold))
+            vel.angular.z = -1.0
 
-    if time.time() - time_last_saw_wall > 20:
+    if time_now - time_last_saw_wall > 20:
         vel.angular.z = 0.0
 
     cmd_vel_pub.publish(vel)

@@ -19,7 +19,7 @@ def process(msg):
 
     closest_ahead = 10.0
     for x, y in locations:
-        if (y > -0.1) and (y < 0.1) and (x > 0):
+        if (y > -0.15) and (y < 0.15) and (x > 0):
             if x < closest_ahead:
                 closest_ahead = x
 
