@@ -9,6 +9,7 @@ def bearing(angle_min, angle_inc, i):
     return angle_min + i * angle_inc
 
 def process(msg):
+    # below we convert the coordinates from polar to cartesian coordinates
     min = msg.angle_min
     inc = msg.angle_increment
     locations = []
@@ -16,7 +17,7 @@ def process(msg):
         angle = bearing(min, inc, i)
         r = msg.ranges[i]
         locations.append((r*math.cos(angle), r*math.sin(angle)))
-
+    # find the object that is closest ahead in our defined rectangular area
     closest_ahead = 10.0
     for x, y in locations:
         if (y > -0.15) and (y < 0.15) and (x > 0):
