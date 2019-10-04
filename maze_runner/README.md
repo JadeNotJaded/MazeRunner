@@ -1,4 +1,9 @@
 # MazeRunner
+
+Assignment: 10.1 Maze (Teams of two)
+Authors: Addison Phitha and Jade Garisch
+Date: October 4, 2019
+
 This program allows a Turtlebot3 to escape a maze autonomously. To run this file start up roscore on the turtlebot3 or simulator and run the launch file:
 
 roslaunch maze_runner maze_runner.launch
