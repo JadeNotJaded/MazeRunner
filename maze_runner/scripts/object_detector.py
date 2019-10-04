@@ -5,8 +5,6 @@ import math
 from sensor_msgs.msg import LaserScan
 from std_msgs.msg import Float32
 
-radius = 0.2 # set the radius of the robot to 0.2m for calculation (larger than reality)
-
 def bearing(angle_min, angle_inc, i):
     return angle_min + i * angle_inc
 

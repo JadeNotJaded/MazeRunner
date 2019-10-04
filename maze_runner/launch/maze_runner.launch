@@ -1,0 +1,4 @@
+<launch>
+    <node name="controller" pkg="maze_runner" type="controller.py" output="screen"/>
+    <node name="object_detector" pkg="maze_runner" type="object_detector.py" output="screen"/>
+</launch>
